@@ -1,6 +1,7 @@
 package com.israelflores.repositories;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -16,6 +17,9 @@ public interface RepositorioCanciones extends CrudRepository <Cancion, Long> {
 	
 	
 	//------- selecciona el ID de la tabla peliculas
-	// Cancion findById(Long id);
+	Optional <Cancion> findById(Long id);
+
+	//------- guarda la cancion en la base de datos
+	// Cancion save(Cancion nuevaCancion);
 
 }
