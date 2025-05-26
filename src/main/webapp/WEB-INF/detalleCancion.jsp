@@ -8,6 +8,13 @@
 		<title>Detalle de canción</title>
 	</head>
 	<body>
+		<div class="container">
+		<h2> Detalles de la cancion: ${cancion.titulo}</h2>
+		<p> Artista: ${cancion.artista}</p>
+		<p> Album: ${cancion.album}</p>
+		<p> Género: ${cancion.genero}</p>
+		<p> Idioma: ${cancion.idioma}</p>
+		</div>
 		<a href="/canciones" ><button> Volver a la lista de canciones</button></a>
 	</body>
 </html>

@@ -27,7 +27,7 @@ public class ServicioCanciones {
 	}
 	
 	public Cancion obtenerCancionPorId(Long id) {
-		return this.repositorioCanciones.findAllById(id);
+		return this.repositorioCanciones.findById(id).orElse(null);
 	}
 	
 	

@@ -20,7 +20,7 @@
 				<tr>
 					<td> ${cancion.titulo} </td>
 					<td> ${cancion.artista} </td>
-					<td> <a href="/canciones/detalle/${cancion.id}"> Detalle </a></td>
+					<td> <a  method="GET" href="/canciones/detalle/${cancion.id}"> Detalle </a></td>
 				</tr>
 				</c:forEach>
 			</table>
