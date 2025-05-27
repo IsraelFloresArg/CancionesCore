@@ -21,5 +21,9 @@ public interface RepositorioCanciones extends CrudRepository <Cancion, Long> {
 
 	//------- guarda la cancion en la base de datos
 	// Cancion save(Cancion nuevaCancion);
+	
+	//------- elimina la cancion en la base de datos
+	void deleteById (long id);
+
 
 }

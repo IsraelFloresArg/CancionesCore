@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -45,6 +46,7 @@ public class ControladorCanciones {
 			return "redirect:/canciones";
 		}
 		
+		cancion.addAttribute("cancion", cancionDetalle);
 		
 		//cancion.addAttribute("nombre", cancionDetalle.getTitulo());
 		//cancion.addAttribute("artista", cancionDetalle.getTitulo());
@@ -107,14 +109,10 @@ public class ControladorCanciones {
 	}
 	
 	// ---------------- Elimina la canción en la lista ------------
-	@PostMapping("/canciones/eliminar/{idCamcion}")
-	public String procesarEliminarCancion(@Valid @ModelAttribute("cancion") Cancion cancion,
-										 BindingResult validacion,
-										 @PathVariable("idCancion") Long cancionId) {
-		if (validacion.hasErrors()) {
-			return"agregarCancion.jsp";
-		}
-		this.servicioCanciones.agregarCancion(cancion);
+	@DeleteMapping("/canciones/eliminar/{idCamcion}")
+	public String procesarEliminarCancion(@PathVariable("idCancion") Long cancionId) {
+		
+		this.servicioCanciones.eliminaCancion(cancionId);
 		return "redirect:/canciones";
 	}
 	
