@@ -24,10 +24,6 @@
 				<button> Elimnar canción</button>
 				</form>
 				</div>
-				<div>
-				<a href="/canciones/formulario/editar/${cancion.id}" ><button> Editar canción</button></a>
-				<a href="/canciones/eliminar/${cancion.id}" ><button> Elimnar canción</button></a>
-				</div>
 				<a href="/canciones" ><button> Volver a la lista de canciones</button></a>
 			</div>
 		</div>

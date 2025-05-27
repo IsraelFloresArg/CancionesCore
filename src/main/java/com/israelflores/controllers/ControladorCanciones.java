@@ -90,7 +90,7 @@ public class ControladorCanciones {
 	}
 	
 	// ---------------- Actualiza la canción en la lista ------------
-	@PutMapping("/canciones/procesa/editar/{idCamcion}")
+	@PutMapping("/canciones/procesa/editar/{idCancion}")
 	public String procesarEditarCancion(@Valid @ModelAttribute("cancion") Cancion cancion,
 										 BindingResult validacion,
 										 @PathVariable("idCancion") Long cancionId) {
@@ -109,7 +109,7 @@ public class ControladorCanciones {
 	}
 	
 	// ---------------- Elimina la canción en la lista ------------
-	@DeleteMapping("/canciones/eliminar/{idCamcion}")
+	@DeleteMapping("/canciones/eliminar/{idCancion}")
 	public String procesarEliminarCancion(@PathVariable("idCancion") Long cancionId) {
 		
 		this.servicioCanciones.eliminaCancion(cancionId);

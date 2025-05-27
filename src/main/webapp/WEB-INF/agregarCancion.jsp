@@ -11,7 +11,7 @@
 	<body>
 	<h2>Registra una nueva canción</h2>
 		<div class="container">
-		<form:form action="/canciones/procesa/editar/${cancion.id}" method="POST" modelAttribute="cancion">
+		<form:form action="/canciones/procesa/agregar" method="POST" modelAttribute="cancion">
 			<div>
 			<form:label path="titulo"> Título:</form:label>
 				<form:input path="titulo"/>

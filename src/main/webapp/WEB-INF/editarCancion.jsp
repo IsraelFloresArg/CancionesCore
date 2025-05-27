@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@  page isErrorPage="true" %>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,9 +11,10 @@
 		<title>Editar canción</title>
 	</head>
 	<body>
-	<h2>Registra una nueva canción</h2>
+	<h2>Editar canción</h2>
 		<div class="container">
-		<form:form action="/canciones/procesa/editar/${idCancion}" method="POST" modelAttribute="cancion">
+		<form:form action="/canciones/procesa/editar/${cancion.id}" method="POST" modelAttribute="cancion">
+			<input type="hidden" name="_method" value="PUT"/>
 			<div>
 			<form:label path="titulo"> Título:</form:label>
 				<form:input path="titulo" value="${cancion.titulo}" />
