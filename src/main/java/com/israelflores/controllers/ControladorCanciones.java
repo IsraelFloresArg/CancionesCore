@@ -44,7 +44,7 @@ public class ControladorCanciones {
 			return "redirect:/canciones";
 		}
 		
-		cancion.addAttribute("cancion", cancionDetalle);
+		
 		//cancion.addAttribute("nombre", cancionDetalle.getTitulo());
 		//cancion.addAttribute("artista", cancionDetalle.getTitulo());
 		//cancion.addAttribute("album", cancionDetalle.getTitulo());
@@ -53,11 +53,27 @@ public class ControladorCanciones {
 		return "detalleCancion.jsp";
 	}
 	
+	// ------------- mostrar formulario de registro -------------
 	@GetMapping("/canciones/formulario/agregar")
 	public String formularioAgregarCancion(@ModelAttribute("cancion") Cancion cancion) {
 		
 		return "agregarCancion.jsp";
 	}
+	
+	// ------------- mostrar formulario de actualizacion -------------
+	@GetMapping("/canciones/formulario/editar/{idCancion}")
+	public String formularioEditarCancion(@PathVariable("idCancion") Long cancionId,
+										  Model cancion) {
+		Cancion cancionDetalle = this.servicioCanciones.obtenerCancionPorId(cancionId);
+		
+		if (cancionDetalle == null) {
+			return "redirect:/canciones";
+		}
+		
+		cancion.addAttribute("cancion", cancionDetalle);
+		return "editarCancion.jsp";
+	}
+	
 
 	@PostMapping("/canciones/procesa/agregar")
 	public String procesarAgregarCancion(@Valid @ModelAttribute("cancion") Cancion cancion,
