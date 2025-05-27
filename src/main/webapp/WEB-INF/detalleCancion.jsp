@@ -17,7 +17,14 @@
 				<p> Idioma: ${cancion.idioma}</p>
 			</div>
 			<div>
-				<a href="/canciones/formulario/editar/{idCancion}" ><button> Editar canción</button></a>
+				<div>
+				<form action="/canciones/formulario/editar/${cancion.id}" method="GET" ><button> Editar canción</button></form>
+				<form action="/canciones/eliminar/${cancion.id}" method="GET" ><button> Elimnar canción</button></form>
+				</div>
+				<div>
+				<a href="/canciones/formulario/editar/${cancion.id}" ><button> Editar canción</button></a>
+				<a href="/canciones/eliminar/${cancion.id}" ><button> Elimnar canción</button></a>
+				</div>
 				<a href="/canciones" ><button> Volver a la lista de canciones</button></a>
 			</div>
 		</div>
