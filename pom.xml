@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.israelflores</groupId>
-	<artifactId>Canciones-1</artifactId>
+	<artifactId>CancionesYArtistas</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Canciones-1</name>
+	<name>CancionesYArtistas</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -42,7 +42,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web-services</artifactId>
 		</dependency>
-
 		<dependency>
 		       <groupId>org.apache.tomcat.embed</groupId>
 		       <artifactId>tomcat-embed-jasper</artifactId>
@@ -76,6 +75,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
 	</dependencies>
 
 	<build>
